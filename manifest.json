@@ -1,0 +1,17 @@
+{
+	"required_api_version": "^2.0.0",
+	"name": "Workspace",
+	"description": "nope",
+    "developer_name": "nope",
+	"icon": "images/work.png",
+	"options": {
+		"query_debounce": 0.1
+	},
+	"preferences": [{
+		"id": "workspace_kw",
+		"type": "keyword",
+		"name": "workspace",
+        "description": "nope",
+		"default_value": "p"
+	}]
+}
