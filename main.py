@@ -29,28 +29,20 @@ class KeywordQueryEventListener(EventListener):
             return;
 
         items = []
+        workspaces = ['/home/*/Works/*', '/home/*/Works/*/*']
 
-        for workspace in glob.glob('/home/{pedro,pedrotroller}/Works/*'):
-            name = ntpath.basename(workspace)
 
-            if query.lower() in name.lower():
-                items.append(ExtensionResultItem(
-                    name=name,
-                    description=workspace,
-                    icon='images/work.png',
-                    on_enter=OpenAction(workspace)
-                ))
+        for workspace in workspace:
+            for project in glob.glob(workspace):
+                name = ntpath.basename(project)
 
-        for project in glob.glob('/home/{pedro,pedrotroller}/Works/*/*'):
-            name = ntpath.basename(project)
-
-            if query.lower() in name.lower():
-                items.append(ExtensionResultItem(
-                    name=name,
-                    description=project,
-                    icon='images/work.png',
-                    on_enter=OpenAction(project)
-                ))
+                if query.lower() in name.lower():
+                    items.append(ExtensionResultItem(
+                        name=name,
+                        description=project,
+                        icon='images/work.png',
+                        on_enter=OpenAction(project)
+                    ))
 
         return RenderResultListAction(items)
 
