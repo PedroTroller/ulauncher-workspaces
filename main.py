@@ -29,7 +29,7 @@ class KeywordQueryEventListener(EventListener):
             return;
 
         items = []
-        workspaces = ['/home/*/Works/*', '/home/*/Works/*/*']
+        workspaces = ['/home/pedrotroller/Works/*', '/home/pedrotroller/Works/*/*']
 
 
         for workspace in workspace:
