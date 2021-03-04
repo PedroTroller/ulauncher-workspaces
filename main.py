@@ -30,7 +30,7 @@ class KeywordQueryEventListener(EventListener):
 
         items = []
 
-        for workspace in glob.glob('/home/pedro/Works/*'):
+        for workspace in glob.glob('/home/{pedro,pedrotroller}/Works/*'):
             name = ntpath.basename(workspace)
 
             if query.lower() in name.lower():
@@ -41,7 +41,7 @@ class KeywordQueryEventListener(EventListener):
                     on_enter=OpenAction(workspace)
                 ))
 
-        for project in glob.glob('/home/pedro/Works/*/*'):
+        for project in glob.glob('/home/{pedro,pedrotroller}/Works/*/*'):
             name = ntpath.basename(project)
 
             if query.lower() in name.lower():
